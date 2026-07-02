@@ -64,7 +64,6 @@ If the private key is compromised, an attacker can create fake valid signatures,
 
 
 ## Task 3.3 – RSA Cryptography
-
 ### a) Key Generation
 Given:
 - p = 5
@@ -86,7 +85,8 @@ Choose:
 e = 3
 because gcd(3,40)=1.
 
-Step 4 : Find d such that
+Step 4 : 
+Find d such that
 d × e ≡ 1 (mod 40)
 3 × 27 = 81
 81 mod 40 = 1
@@ -94,6 +94,7 @@ Therefore,
 d = 27
 Public Key = (3,55)
 Private Key = (27,55)
+
 ---
 
 ### b) Encryption
@@ -106,6 +107,7 @@ c = 3³ mod 55
 = 27
 Ciphertext:
 c = 27
+
 ---
 
 ### c) Decryption
@@ -128,6 +130,7 @@ Using modular exponentiation:
 Recovered message:
 m = 3
 The decrypted message matches the original plaintext.
+
 ---
 
 ## d)
