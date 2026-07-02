@@ -93,7 +93,5 @@ This si Satisfied by business rules such as:
 - Marks must be within the allowed range.
 
 
-# Omkar gd 
-ramteerthnagar
 
 
