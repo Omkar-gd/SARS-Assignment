@@ -2,7 +2,7 @@
 # TASK 1.1 - Normalisation
 # Task 1.1(a) Partial and Transitive Dependencies
 
-# Partial Dependencies
+# Partical dependies
 The composite primary key is (student_id, course_code).
 
 These are the attributes depend only on student_id:
