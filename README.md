@@ -106,3 +106,6 @@ The Enrollment class depends on the EnrollmentRepository interface rather than a
 
 ## Singleton Design Pattern
 The Singleton pattern ensures that only one instance of the DatabaseConnection class exists throughout the application. This prevents multiple database connections and saves system resources.
+
+## Observer Design Pattern
+The Observer pattern allows a Course object to notify all subscribed students whenever an important event occurs, such as an exam schedule update. This reduces coupling between the course and student objects and makes notifications easier to manage.
