@@ -74,7 +74,7 @@ This decomposition removes update, insertion, and deletion anomalies and satisfi
 
 # Task 1.1(c) Data Integrity
 # Entity Integrity
-This is Satisfied because every table has a primary key and primary key values cannot be NULL.
+This is Satisfied because every table has a primary key and primary key values cannot be NULL
 
 # Referential Integrity
 This is Satisfied by using foreign keys:
@@ -84,14 +84,28 @@ This is Satisfied by using foreign keys:
 - Enrollment.course_code references Course.course_code
 
 # Domain Integrity
-This is Satisfied by using appropriate data types and constraints such as INT, VARCHAR, and marks_obtained values between 0 and 100.
+This is Satisfied by using appropriate data types and constraints such as INT, VARCHAR, and marks_obtained values between 0 and 100
 
 # User-defined Integrity
 This si Satisfied by business rules such as:
-- Every student must have a valid student_id.
-- Every course must have a unique course_code.
-- Marks must be within the allowed range.
+- Every student must have a valid student_id
+- Every course must have a unique course_code
+- Marks must be within the allowed range
 
+# Task 1.5 – Transaction and Concurrency
+# Transaction
+A transaction is a group of SQL statements that are executed as a single unit of work.
 
+# COMMIT
+COMMIT permanently saves changes.
+
+# ROLLBACK
+ROLLBACK cancels all changes that are made during the transaction if an error occurs.
+
+# Non-Repeatable Read
+This happens when a transaction reads the same row twice and gets different values because another transaction updated the data.
+
+# MVCC (Multi-Version Concurrency Control)
+MVCC allows multiple users to read data at the same time without blocking each other by keeping multiple versions of the data.
 
 
