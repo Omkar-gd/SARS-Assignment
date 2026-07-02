@@ -109,3 +109,14 @@ This happens when a transaction reads the same row twice and gets different valu
 MVCC allows multiple users to read data at the same time without blocking each other by keeping multiple versions of the data.
 
 
+# Part 2 - SOLID Principles
+# Single Responsibility Principle (SRP)
+The Student class only manages student-related information. Email notifications are handled separately.
+
+# Open/Closed Principle (OCP)
+The Enrollment class can be extended by creating WaitlistedEnrollment without modifying the original Enrollment class.
+
+# Dependency Inversion Principle (DIP)
+The Enrollment class depends on the EnrollmentRepository interface rather than a specific database implementation.
+
+
