@@ -61,3 +61,74 @@ In SARS:
 - Private signing key → University Server
 - Public verification key → Students and other authorized users
 If the private key is compromised, an attacker can create fake valid signatures, so trust in the system is lost.
+
+
+## Task 3.3 – RSA Cryptography
+
+### a) Key Generation
+Given:
+- p = 5
+- q = 11
+- 
+Step 1:
+n = p × q
+n = 5 × 11 = 55
+
+Step 2:
+φ(n) = (p − 1)(q − 1)
+φ(n) = (5 − 1)(11 − 1)
+φ(n) = 4 × 10 = 40
+
+Step 3 : Choose a public exponent e such that
+1 < e < 40
+and gcd(e,40)=1
+Choose:
+e = 3
+because gcd(3,40)=1.
+
+Step 4 : Find d such that
+d × e ≡ 1 (mod 40)
+3 × 27 = 81
+81 mod 40 = 1
+Therefore,
+d = 27
+Public Key = (3,55)
+Private Key = (27,55)
+---
+
+### b) Encryption
+Message:
+m = 3
+Formula:
+c = m^e mod n
+c = 3³ mod 55
+= 27 mod 55
+= 27
+Ciphertext:
+c = 27
+---
+
+### c) Decryption
+Formula:
+m = c^d mod n
+m = 27²⁷ mod 55
+Using modular exponentiation:
+27² mod 55 = 14
+27⁴ mod 55 = 31
+27⁸ mod 55 = 26
+27¹⁶ mod 55 = 16
+27²⁷ = 27¹⁶ × 27⁸ × 27² × 27¹
+= 16 × 26 × 14 × 27 (mod 55)
+16 × 26 = 416
+416 mod 55 = 31
+31 × 14 = 434
+434 mod 55 = 49
+49 × 27 = 1323
+1323 mod 55 = 3
+Recovered message:
+m = 3
+The decrypted message matches the original plaintext.
+---
+
+## d)
+RSA security depends on the difficulty of factoring the large number n into its prime factors p and q. Without factoring n, an attacker cannot efficiently compute φ(n) and therefore cannot calculate the private key d. For very large values of n, factoring is computationally infeasible.
