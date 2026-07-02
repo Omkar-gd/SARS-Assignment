@@ -1,7 +1,7 @@
 # SARS Assignment
 # TASK 1.1 - Normalisation
-# Task 1.1(a) Partial and Transitive Dependencies
 
+# Task 1.1(a) Partial and Transitive Dependencies
 # Partial dependencies
 The composite primary key is (student_id, course_code).
 These are the attributes depend only on student_id:
@@ -70,4 +70,29 @@ Foreign Keys:
 - student_id → Student(student_id)
 - course_code → Course(course_code)
 This decomposition removes update, insertion, and deletion anomalies and satisfies BCNF because every non-key attribute depends only on the key.
+
+
+# Task 1.1(c) Data Integrity
+# Entity Integrity
+This is Satisfied because every table has a primary key and primary key values cannot be NULL.
+
+# Referential Integrity
+This is Satisfied by using foreign keys:
+- Student.advisor_id references Advisor.advisor_id
+- Course.instructor_id references Instructor.instructor_id
+- Enrollment.student_id references Student.student_id
+- Enrollment.course_code references Course.course_code
+
+# Domain Integrity
+This is Satisfied by using appropriate data types and constraints such as INT, VARCHAR, and marks_obtained values between 0 and 100.
+
+# User-defined Integrity
+This si Satisfied by business rules such as:
+- Every student must have a valid student_id.
+- Every course must have a unique course_code.
+- Marks must be within the allowed range.
+
+
+
+
 
