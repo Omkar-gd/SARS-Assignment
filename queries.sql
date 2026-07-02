@@ -115,3 +115,16 @@ SELECT student_id,
 marks_obtained,
 DENSE_RANK() OVER(ORDER BY marks_obtained DESC) AS dense_rank_num
 FROM Enrollment;
+
+
+-- Task 1.5
+-- Transaction Example
+BEGIN;
+UPDATE Enrollment
+SET marks_obtained = marks_obtained + 5
+WHERE student_id = 101;
+INSERT INTO Enrollment
+VALUES (101,'CS102',2026,88);
+COMMIT;
+-- If an error occurs, use:
+ROLLBACK;
